@@ -115,8 +115,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/48x48/apps/kget.png
 %{_iconsdir}/hicolor/64x64/apps/kget.png
 %{_datadir}/kconf_update/kget.upd
-%{_datadir}/kconf_update/kget_limitdownloads.pl
-%{_datadir}/kconf_update/kget_sensitive.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kget_limitdownloads.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kget_sensitive.pl
 %{_datadir}/kget
 %{_datadir}/khtml/kpartplugins/kget_plug_in.desktop
 %{_datadir}/khtml/kpartplugins/kget_plug_in.rc

@@ -1,14 +1,15 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
+%define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kget
 Summary:	kget
 Name:		ka5-%{kaname}
-Version:	18.12.1
-Release:	2
+Version:	19.04.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1c147a2dad1532d0d33acc70ef537f66
+# Source0-md5:	940201b68bd37e0a6659cd19c96c9bdf
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -23,29 +24,30 @@ BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
 BuildRequires:	gpgme-c++-devel >= 1.7.0
 BuildRequires:	gpgme-qt5-devel
-BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
-BuildRequires:	kf5-kcmutils-devel >= 5.44.0
-BuildRequires:	kf5-kcompletion-devel >= 5.44.0
-BuildRequires:	kf5-kconfig-devel >= 5.44.0
-BuildRequires:	kf5-kconfigwidgets-devel >= 5.44.0
-BuildRequires:	kf5-kcoreaddons-devel >= 5.44.0
-BuildRequires:	kf5-kdbusaddons-devel >= 5.44.0
-BuildRequires:	kf5-kdelibs4support-devel >= 5.44.0
-BuildRequires:	kf5-kdoctools-devel >= 5.44.0
-BuildRequires:	kf5-ki18n-devel >= 5.44.0
-BuildRequires:	kf5-kiconthemes-devel >= 5.44.0
-BuildRequires:	kf5-kio-devel >= 5.44.0
-BuildRequires:	kf5-kitemviews-devel >= 5.44.0
-BuildRequires:	kf5-knotifications-devel >= 5.44.0
-BuildRequires:	kf5-knotifyconfig-devel >= 5.44.0
-BuildRequires:	kf5-kparts-devel >= 5.44.0
-BuildRequires:	kf5-kservice-devel >= 5.44.0
-BuildRequires:	kf5-ktextwidgets-devel >= 5.44.0
-BuildRequires:	kf5-kwallet-devel >= 5.44.0
-BuildRequires:	kf5-kwidgetsaddons-devel >= 5.44.0
-BuildRequires:	kf5-kwindowsystem-devel >= 5.44.0
-BuildRequires:	kf5-kxmlgui-devel >= 5.44.0
-BuildRequires:	kf5-solid-devel >= 5.44.0
+BuildRequires:	ka5-dolphin-devel >= %{kdeappsver}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kcmutils-devel >= %{kframever}
+BuildRequires:	kf5-kcompletion-devel >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kframever}
+BuildRequires:	kf5-kdelibs4support-devel >= %{kframever}
+BuildRequires:	kf5-kdoctools-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
+BuildRequires:	kf5-kiconthemes-devel >= %{kframever}
+BuildRequires:	kf5-kio-devel >= %{kframever}
+BuildRequires:	kf5-kitemviews-devel >= %{kframever}
+BuildRequires:	kf5-knotifications-devel >= %{kframever}
+BuildRequires:	kf5-knotifyconfig-devel >= %{kframever}
+BuildRequires:	kf5-kparts-devel >= %{kframever}
+BuildRequires:	kf5-kservice-devel >= %{kframever}
+BuildRequires:	kf5-ktextwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kwallet-devel >= %{kframever}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
+BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
+BuildRequires:	kf5-solid-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
@@ -67,6 +69,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
@@ -75,6 +78,7 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/sr
 %find_lang %{kaname} --all-name --with-kde
 
 %clean
@@ -107,8 +111,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/kget_mirrorsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_multisegkiofactory.kcfg
 %{_datadir}/dbus-1/services/org.kde.kget.service
-#%{_datadir}/dolphinpart/kpartplugins/kget_plug_in.desktop
-#%{_datadir}/dolphinpart/kpartplugins/kget_plug_in.rc
+%{_datadir}/dolphinpart/kpartplugins/kget_plug_in.desktop
+%{_datadir}/dolphinpart/kpartplugins/kget_plug_in.rc
 %{_iconsdir}/hicolor/128x128/apps/kget.png
 %{_iconsdir}/hicolor/16x16/apps/kget.png
 %{_iconsdir}/hicolor/22x22/apps/kget.png
@@ -119,8 +123,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/kconf_update/kget_limitdownloads.pl
 %attr(755,root,root) %{_datadir}/kconf_update/kget_sensitive.pl
 %{_datadir}/kget
-#%{_datadir}/khtml/kpartplugins/kget_plug_in.desktop
-#%{_datadir}/khtml/kpartplugins/kget_plug_in.rc
+%{_datadir}/khtml/kpartplugins/kget_plug_in.desktop
+%{_datadir}/khtml/kpartplugins/kget_plug_in.rc
 %{_datadir}/knotifications5/kget.notifyrc
 %{_datadir}/kservices5/ServiceMenus/kget_download.desktop
 %{_datadir}/kservices5/kget_checksumsearchfactory_config.desktop
@@ -128,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kget_mirrorsearchfactory_config.desktop
 %{_datadir}/kservices5/kget_multisegkiofactory_config.desktop
 %{_datadir}/kservicetypes5/kget_plugin.desktop
-#%{_datadir}/kwebkitpart/kpartplugins/kget_plug_in.desktop
-#%{_datadir}/kwebkitpart/kpartplugins/kget_plug_in.rc
+%{_datadir}/kwebkitpart/kpartplugins/kget_plug_in.desktop
+%{_datadir}/kwebkitpart/kpartplugins/kget_plug_in.rc
 %{_datadir}/kxmlgui5/kget
 %{_datadir}/metainfo/org.kde.kget.appdata.xml

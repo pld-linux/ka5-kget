@@ -5,7 +5,7 @@
 Summary:	kget
 Name:		ka5-%{kaname}
 Version:	19.04.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -111,6 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config.kcfg/kget_mirrorsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_multisegkiofactory.kcfg
 %{_datadir}/dbus-1/services/org.kde.kget.service
+%dir %{_datadir}/dolphinpart/kpartplugins
 %{_datadir}/dolphinpart/kpartplugins/kget_plug_in.desktop
 %{_datadir}/dolphinpart/kpartplugins/kget_plug_in.rc
 %{_iconsdir}/hicolor/128x128/apps/kget.png
@@ -123,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/kconf_update/kget_limitdownloads.pl
 %attr(755,root,root) %{_datadir}/kconf_update/kget_sensitive.pl
 %{_datadir}/kget
+%dir %{_datadir}/khtml/kpartplugins
 %{_datadir}/khtml/kpartplugins/kget_plug_in.desktop
 %{_datadir}/khtml/kpartplugins/kget_plug_in.rc
 %{_datadir}/knotifications5/kget.notifyrc
@@ -132,6 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kget_mirrorsearchfactory_config.desktop
 %{_datadir}/kservices5/kget_multisegkiofactory_config.desktop
 %{_datadir}/kservicetypes5/kget_plugin.desktop
+%dir %{_datadir}/kwebkitpart/kpartplugins
 %{_datadir}/kwebkitpart/kpartplugins/kget_plug_in.desktop
 %{_datadir}/kwebkitpart/kpartplugins/kget_plug_in.rc
 %{_datadir}/kxmlgui5/kget

@@ -1,15 +1,15 @@
-%define		kdeappsver	21.04.1
+%define		kdeappsver	21.04.2
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kget
 Summary:	kget
 Name:		ka5-%{kaname}
-Version:	21.04.1
+Version:	21.04.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f5f7876c8d65798d5b7067a3ec04330c
+# Source0-md5:	15d2921dc49cba9cf3b2f2ee7b3cd5dc
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -25,6 +25,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	gpgme-c++-devel >= 1.7.0
 BuildRequires:	gpgme-qt5-devel
 BuildRequires:	ka5-dolphin-devel >= %{kdeappsver}
+BuildRequires:	ka5-libktorrent-devel >= %{kdeappsver}
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf5-kcmutils-devel >= %{kframever}
 BuildRequires:	kf5-kcompletion-devel >= %{kframever}
@@ -142,3 +143,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kxmlgui5/kget
 %{_datadir}/metainfo/org.kde.kget.appdata.xml
 %{_datadir}/qlogging-categories5/kget.categories
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_bittorrentfactory.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_bittorrent.so
+%{_datadir}/kservices5/kget_bittorrentfactory_config.desktop

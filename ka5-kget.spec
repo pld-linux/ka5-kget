@@ -62,6 +62,11 @@ KGet is a versatile and user-friendly download manager.. Features.
 Downloading files from FTP and HTTP(S) sources. Pausing and resuming
 of downloading files, as well as the ability to restart a download.
 
+%description -l pl.UTF-8
+KGet jest wszechstronnym i łatwym w użyciu menadżerem pobierania.
+Cechy: pobiera plików przez FTP i HTTP(S). Wstrzymywanie i wznawianie
+pobierania plików, a także możliwość zrestartowania downloadu.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 

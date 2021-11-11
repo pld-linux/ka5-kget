@@ -5,7 +5,7 @@
 Summary:	kget
 Name:		ka5-%{kaname}
 Version:	21.08.3
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -103,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_metalinkfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_mirrorsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_multisegkiofactory.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_mmsfactory.so
 %dir %{_libdir}/qt5/plugins/kget
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_checksumsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_kio.so
@@ -110,11 +111,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_mirrorsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_multisegkiofactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget_browser_integration.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_mmsfactory.so
 %{_desktopdir}/org.kde.kget.desktop
 %{_datadir}/config.kcfg/kget.kcfg
 %{_datadir}/config.kcfg/kget_checksumsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_mirrorsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_multisegkiofactory.kcfg
+%{_datadir}/config.kcfg/kget_mmsfactory.kcfg
 %{_datadir}/dbus-1/services/org.kde.kget.service
 %dir %{_datadir}/dolphinpart
 %dir %{_datadir}/dolphinpart/kpartplugins
@@ -151,3 +154,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_bittorrentfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_bittorrent.so
 %{_datadir}/kservices5/kget_bittorrentfactory_config.desktop
+%{_datadir}/kservices5/kget_mmsfactory_config.desktop

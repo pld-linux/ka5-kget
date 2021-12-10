@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.3
+%define		kdeappsver	21.12.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kget
 Summary:	kget
 Name:		ka5-%{kaname}
-Version:	21.08.3
-Release:	2
+Version:	21.12.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9a25db8a57c940b70361c8ac904079d9
+# Source0-md5:	060ffb6750aad26bb75d9a0341e279c7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -103,7 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_metalinkfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_mirrorsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_multisegkiofactory.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_mmsfactory.so
 %dir %{_libdir}/qt5/plugins/kget
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_checksumsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_kio.so
@@ -111,13 +110,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_mirrorsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_multisegkiofactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget_browser_integration.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_mmsfactory.so
 %{_desktopdir}/org.kde.kget.desktop
 %{_datadir}/config.kcfg/kget.kcfg
 %{_datadir}/config.kcfg/kget_checksumsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_mirrorsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_multisegkiofactory.kcfg
-%{_datadir}/config.kcfg/kget_mmsfactory.kcfg
 %{_datadir}/dbus-1/services/org.kde.kget.service
 %dir %{_datadir}/dolphinpart
 %dir %{_datadir}/dolphinpart/kpartplugins
@@ -129,9 +126,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/kget.png
 %{_iconsdir}/hicolor/48x48/apps/kget.png
 %{_iconsdir}/hicolor/64x64/apps/kget.png
-%{_datadir}/kconf_update/kget.upd
-%attr(755,root,root) %{_datadir}/kconf_update/kget_limitdownloads.pl
-%attr(755,root,root) %{_datadir}/kconf_update/kget_sensitive.pl
 %{_datadir}/kget
 %dir %{_datadir}/khtml
 %dir %{_datadir}/khtml/kpartplugins
@@ -154,4 +148,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_bittorrentfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_bittorrent.so
 %{_datadir}/kservices5/kget_bittorrentfactory_config.desktop
-%{_datadir}/kservices5/kget_mmsfactory_config.desktop

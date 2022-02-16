@@ -52,6 +52,7 @@ BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
 BuildRequires:	kf5-solid-devel >= %{kframever}
 BuildRequires:	ninja
+BuildRequires:	qca-qt5-devel >= 2.1.0
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info

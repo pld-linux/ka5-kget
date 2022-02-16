@@ -15,6 +15,7 @@ BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
 BuildRequires:	Qt5Gui-devel
 BuildRequires:	Qt5Network-devel
+BuildRequires:	Qt5PrintSupport-devel
 BuildRequires:	Qt5Sql-devel
 BuildRequires:	Qt5Test-devel
 BuildRequires:	Qt5Widgets-devel

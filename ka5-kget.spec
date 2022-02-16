@@ -26,7 +26,7 @@ BuildRequires:	gpgme-c++-devel >= 1.7.0
 BuildRequires:	gpgme-qt5-devel
 BuildRequires:	ka5-dolphin-devel >= %{kdeappsver}
 BuildRequires:	ka5-libktorrent-devel >= %{kdeappsver}
-BuildRequires:	kf5-karchive-devel >= %{kdeappsver}
+BuildRequires:	kf5-karchive-devel >= %{kframever}
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf5-kcmutils-devel >= %{kframever}
 BuildRequires:	kf5-kcompletion-devel >= %{kframever}

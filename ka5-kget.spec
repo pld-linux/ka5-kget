@@ -5,7 +5,7 @@
 Summary:	kget
 Name:		ka5-%{kaname}
 Version:	21.12.2
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -99,21 +99,26 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkgetcore.so
 %ghost %{_libdir}/libkgetcore.so.5
 %attr(755,root,root) %{_libdir}/libkgetcore.so.*.*.*
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_bittorrentfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_checksumsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_metalinkfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_mirrorsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_multisegkiofactory.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_mmsfactory.so
 %dir %{_libdir}/qt5/plugins/kget
+%attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_bittorrent.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_checksumsearchfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_kio.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_metalinkfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_mirrorsearchfactory.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_mmsfactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_multisegkiofactory.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kget_browser_integration.so
 %{_desktopdir}/org.kde.kget.desktop
 %{_datadir}/config.kcfg/kget.kcfg
 %{_datadir}/config.kcfg/kget_checksumsearchfactory.kcfg
 %{_datadir}/config.kcfg/kget_mirrorsearchfactory.kcfg
+%{_datadir}/config.kcfg/kget_mmsfactory.kcfg
 %{_datadir}/config.kcfg/kget_multisegkiofactory.kcfg
 %{_datadir}/dbus-1/services/org.kde.kget.service
 %dir %{_datadir}/dolphinpart
@@ -133,9 +138,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/khtml/kpartplugins/kget_plug_in.rc
 %{_datadir}/knotifications5/kget.notifyrc
 %{_datadir}/kservices5/ServiceMenus/kget_download.desktop
+%{_datadir}/kservices5/kget_bittorrentfactory_config.desktop
 %{_datadir}/kservices5/kget_checksumsearchfactory_config.desktop
 %{_datadir}/kservices5/kget_metalinkfactory_config.desktop
 %{_datadir}/kservices5/kget_mirrorsearchfactory_config.desktop
+%{_datadir}/kservices5/kget_mmsfactory_config.desktop
 %{_datadir}/kservices5/kget_multisegkiofactory_config.desktop
 %{_datadir}/kservicetypes5/kget_plugin.desktop
 %dir %{_datadir}/kwebkitpart
@@ -145,6 +152,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kxmlgui5/kget
 %{_datadir}/metainfo/org.kde.kget.appdata.xml
 %{_datadir}/qlogging-categories5/kget.categories
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kget_bittorrentfactory.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kget/kget_bittorrent.so
-%{_datadir}/kservices5/kget_bittorrentfactory_config.desktop
+

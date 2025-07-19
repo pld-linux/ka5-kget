@@ -26,8 +26,7 @@ BuildRequires:	Qt5Xml-devel
 BuildRequires:	boost-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	gpgme-c++-devel >= 1.7.0
-BuildRequires:	gpgme-qt5-devel
+BuildRequires:	gpgmepp-devel >= 1.7.0
 BuildRequires:	ka5-dolphin-devel >= %{kdeappsver}
 BuildRequires:	ka5-libktorrent-devel >= %{kdeappsver}
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
@@ -57,6 +56,7 @@ BuildRequires:	kf5-solid-devel >= %{kframever}
 BuildRequires:	libmms-devel
 BuildRequires:	ninja
 BuildRequires:	qca-qt5-devel >= 2.1.0
+BuildRequires:	qgpgme-qt5-devel
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
